@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-
 body {
     background-color: #F3F5FC;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     font-family: "Inter", sans-serif;
 }
 
 header {
     padding: 3% 0 0 3%;
     /* position: fixed; */
+}
+
+main {
+    flex: 1;
 }
 
 .container {
@@ -36,7 +39,7 @@ header {
     /* color: #0A3871; */
 
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 3.2rem;
     border: none;
     /* text-transform: lowercase; */
     background-color: #F3F5FC;
@@ -56,7 +59,7 @@ header {
 .container__decodificador__regra__texto {
     color: #495057;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     
 }
 
@@ -73,7 +76,7 @@ header {
     border-color: #0A3871;
     color: #FFFFFF;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 .botao__descript {
@@ -84,7 +87,7 @@ header {
     border-color: #0A3871;
     color: #0A3871;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 .container__areaCopia {
@@ -100,6 +103,7 @@ header {
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
+    font-size: 1.6rem;
 }
 
 .container__areaCopia__conteudo > div{
@@ -124,4 +128,5 @@ footer {
 
 footer > p {
     text-align: center;
+    font-size: 1.6rem;
 }
