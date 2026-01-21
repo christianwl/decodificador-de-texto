@@ -5,9 +5,9 @@ body {
 
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 
     font-family: "Inter", sans-serif;
+    color: #000000;
 }
 
 header {
@@ -39,7 +39,7 @@ main {
     /* color: #0A3871; */
 
     font-weight: 400;
-    font-size: 3.2rem;
+    font-size: var(--text-3xl);
     border: none;
     /* text-transform: lowercase; */
     background-color: #F3F5FC;
@@ -59,7 +59,7 @@ main {
 .container__decodificador__regra__texto {
     color: #495057;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: var(--text-xs);
     
 }
 
@@ -70,24 +70,24 @@ main {
 
 .botao__cript {
     width: 280px;
-    padding: 24px;
+    padding: var(--space-6);
     border-radius: 24px;
     background-color: #0A3871;
     border-color: #0A3871;
     color: #FFFFFF;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: var(--text-md);
 }
 
 .botao__descript {
     width: 280px;
-    padding: 24px;
+    padding: var(--space-6);
     border-radius: 24px;
     background-color: #D8DFE8;
     border-color: #0A3871;
     color: #0A3871;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: var(--text-md);
 }
 
 .container__areaCopia {
@@ -103,7 +103,7 @@ main {
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: var(--text-md);
 }
 
 .container__areaCopia__conteudo > div{
@@ -128,5 +128,5 @@ footer {
 
 footer > p {
     text-align: center;
-    font-size: 1.6rem;
+    font-size: var(--text-md);
 }
