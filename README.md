@@ -30,3 +30,11 @@ A lógica principal está centralizada no arquivo `app.js`, com destaque para:
 Para que a criptografia funcione conforme o esperado, o sistema foi projetado para:
 * Trabalhar apenas com **letras minúsculas**.
 * Não utilizar caracteres com **acentuação** ou símbolos especiais.
+
+## Autor
+
+<div>
+  <a href="https://github.com/christianwl">
+    <img src="https://contrib.rocks/image?repo=christianwl/decodificador-de-texto" alt="Autor do Portfolio"/>
+  </a>
+</div>
