@@ -1,37 +1,56 @@
-let texto = document.getElementById("DecodificarTexto");
-let textoDescripto = document.getElementById("textoDescriptogafado");
-let codigoCripto = [['e','enter'],['i','imes'],['a','ai'],['o','ober'],['u','ufat']];
+const TAG_TEXT = document.getElementById("text-area-cript");
 
-function criptografar() {
-    document.getElementById("areaCopia").style.display = "none";
-    let textoModificado = ModificarTexto(texto.value,0,1);
-    ExibirTexto(textoModificado);
+const TAG_TEXT_DESCRIPT = document.getElementById("text-descript");
+
+const COPY_AREA_ID = "copy-area";
+
+const CRIPT_CODES_LIST = [
+  { encrypt: "enter", decrypt: "e" },
+  { encrypt: "imes", decrypt: "i" },
+  { encrypt: "ai", decrypt: "a" },
+  { encrypt: "ober", decrypt: "o" },
+  { encrypt: "ufat", decrypt: "u" },
+];
+
+const BTN_EVENTS_LIST = [
+  { id: "btn-encrypt", action: encrypt },
+  { id: "btn-decrypt", action: decrypt },
+  { id: "btn-copy", action: copy },
+];
+
+function encrypt() {
+  document.getElementById(COPY_AREA_ID).style.display = "none";
+  TAG_TEXT_DESCRIPT.innerHTML = "";
+  TAG_TEXT_DESCRIPT.innerHTML += criptTextFormatter(TAG_TEXT.value);
 }
 
-function descriptografar(){
-    let textoModificado = ModificarTexto(texto.value,1,0);
-    ExibirTextoDescrip(textoModificado);
+function decrypt() {
+  TAG_TEXT_DESCRIPT.innerHTML = criptTextFormatter(TAG_TEXT.value, false);
 }
 
-function ModificarTexto(textoCript, indice1, indice2)
-{
-    for(let i = 0; i < codigoCripto.length; i++){
-        if(textoCript.includes(codigoCripto[i][indice1])){
-            textoCript = textoCript.replace(new RegExp(codigoCripto[i][indice1], 'gi'), codigoCripto[i][indice2]);
-        }     
+function criptTextFormatter(text, isCript = true) {
+  let params = CRIPT_CODES_LIST.map((obj) => {
+    return isCript
+      ? { param1: obj.decrypt, param2: obj.encrypt }
+      : { param1: obj.encrypt, param2: obj.decrypt };
+  });
+
+  params.forEach((obj) => {
+    if (text.includes(obj.param1)) {
+      text = text.replace(new RegExp(obj.param1, "gi"), obj.param2);
     }
-    return textoCript;
+  });
+
+  return text;
 }
 
-function ExibirTexto(textoNovo) {
-    textoDescripto.innerHTML += textoNovo;
+function copy() {
+  navigator.clipboard.writeText(TAG_TEXT_DESCRIPT.innerHTML);
 }
 
-function ExibirTextoDescrip(textoNovo){
-    textoDescripto.innerHTML = textoNovo;
-}
-
-function copiar (){
-    let tl_sel = document.getElementById('textoDescriptogafado').innerHTML;
-    navigator.clipboard.writeText(tl_sel);
-}
+BTN_EVENTS_LIST.forEach((obj) => {
+  const btn = document.getElementById(obj.id);
+  btn.addEventListener("click", () => {
+    obj.action();
+  });
+});

@@ -17,12 +17,16 @@
 
   <body>
     <header>
-      <img class="logoAlura" src="./src/assets/img/logo/alura-logo.png" alt="Logo da alura" />
+      <img
+        class="logoAlura"
+        src="./src/assets/img/logo/alura-logo.png"
+        alt="Logo da alura"
+      />
     </header>
     <main class="container">
       <section class="container__decodificador">
         <textarea
-          id="DecodificarTexto"
+          id="text-area-cript"
           class="container__decodificador__input"
           cols="50"
           rows="10"
@@ -38,10 +42,10 @@
           </p>
         </div>
         <div class="container__decodificador__botoes">
-          <button class="botao__cript" onclick="criptografar()">
+          <button id="btn-encrypt" class="botao__cript">
             Criptografar
           </button>
-          <button class="botao__descript" onclick="descriptografar()">
+          <button id="btn-decrypt" class="botao__descript" >
             Descriptografar
           </button>
         </div>
@@ -50,7 +54,7 @@
         <!-- <textarea class="mensagem" name="mensagem" id="" cols="20" rows="10"></textarea> -->
         <div class="container__areaCopia__conteudo">
           <div>
-            <div id="areaCopia">
+            <div id="copy-area">
               <img
                 src="./src/assets/img/bg/figure.svg"
                 alt="Imagem de uma moça com uma lupa"
@@ -60,8 +64,8 @@
                 Digite um texto que você deseja criptografar ou descriptografar
               </p>
             </div>
-            <p id="textoDescriptogafado"></p>
-            <button class="btn-copiar botao__descript" onclick="copiar()">
+            <p id="text-descript"></p>
+            <button id="btn-copy" class="btn-copiar botao__descript" >
               Copiar
             </button>
           </div>
